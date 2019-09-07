@@ -1,22 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SliderInput from './components/slider/sliderInput';
+import RiskPage1 from './components/risk-tolerance/risk-page-1';
 function App() {
   return (
     <div id="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <SliderInput />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+       
       </header>
+      <RiskPage1 />
     </div>
   );
 }

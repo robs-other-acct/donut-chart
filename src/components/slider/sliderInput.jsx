@@ -3,7 +3,7 @@ import React from 'react';
 class SliderInput extends React.Component{
     constructor(props){
         super(props);
-        this.state = {buttonPos: 0,
+        this.state = {
         selectedLevel: 5}
         this.handleMouseMove = this.handleMouseMove.bind(this);
         this.handleMouseUp = this.handleMouseUp.bind(this);
@@ -46,14 +46,18 @@ class SliderInput extends React.Component{
         return (<div id='slider-input-1'
         className = 'slider-input'>
 
+            <div className = 'notch-container'> 
+            {this.arr9.map((_, idx) => (<div>
+                {idx === this.state.selectedLevel ? 
             <div className = 'button-container'>
-            <div className = "slider-button" 
-            id = "slider-button-1"
-            onMouseDown = {this.buttonClickHandler}
-            style={{left: `${this.state.buttonPos}px` }}>btn</div>
-            </div>
-            <div className = 'tick-container'> 
-            {this.arr9.map(() => (<span></span>))} </div>
+                <div className = "slider-button" 
+                id = "slider-button-1"
+                onMouseDown = {this.buttonClickHandler}
+                >btn</div>
+                </div>
+            : null}
+            <div>|</div>
+            </div>))} </div>
         </div>)
     }
 }

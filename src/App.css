@@ -7,12 +7,10 @@
 
 .App-header {
   background-color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: black;
 }
 
@@ -20,30 +18,35 @@
   color: #61dafb;
 }
 
-.slider-button{
-  position: relative;
+.number-picker{
+  width: 100px;
   display: inline-block;
-  cursor: pointer;
+  margin-left: 15px;
 }
 
-.slider-input{
-  /* position: absolute; */
-  /* border: 2px solid black; */
-  width: 25vw;
-  
+.page{padding: 50px;
+font-size: 18px;}
+
+.center-text{
+  text-align: center;
 }
 
-.tick-container{
+.portfolio-recommend{
+  margin: 20px;
+}
+
+.donut-chart{
+  margin: 40px;
+}
+
+.assets-input-grid{
   display: grid;
-  grid-template-columns: repeat(9, auto);
+  grid-template-columns: auto auto;
 }
-
-.tick-container > *{
-  border-right: solid black 1px;
-
-  height: 10px;
+.asset-label::first-letter{
+  text-transform: uppercase;
 }
-
-.tick-container>*:first-child{
-  border-left: solid black 1px;
+.asset-label{
+  text-align: right;
+  padding-right: 15px;
 }

@@ -7,7 +7,11 @@
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-donut-chart": "^1.1.8",
+    "react-scripts": "3.1.1",
+    "react-svg-donut-chart": "^1.1.0",
+    "react-widgets": "^4.4.11",
+    "react-widgets-simple-number": "^4.1.23"
   },
   "scripts": {
     "predeploy": "npm run build",
