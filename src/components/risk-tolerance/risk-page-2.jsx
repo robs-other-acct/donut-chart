@@ -6,18 +6,24 @@ class RiskPage2 extends React.Component{
         super(props);
     }
 
+    inputHandler(e, cat){
+        this.setState({[cat]: e.target.value})
+    }
     render(){
-        return (<div className = 'page'>{`Risk Page 2: Your risk tolerance is ${this.props.riskTolerance}`}
-            <div className='assets-input-grid'>
-            <div>
+        return (<div className = 'page'>
+            <div className = 'page-content'>
+            Please enter your current investment portfolio, in dollars.
+                        <table className='assets-container'>
+                <tbody>
                 {categories.map(cat=>
-                   <div className='asset-label'> 
-                   {cat}: </div>)}
-            </div>
-            <div>
-                {categories.map(cat=>
-                <div><input></input></div>)}
-            </div>
+                <tr key={cat}>
+                   <td className='asset-label'>{cat}:</td>
+                   <td><input
+                   onChange={e => this.inputHandler(e, cat)}></input></td> 
+                 </tr>
+                )}
+                </tbody>
+                   </table>
             </div>
         </div>)
     }
