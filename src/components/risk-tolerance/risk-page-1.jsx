@@ -5,8 +5,7 @@ import simpleNumberLocalizer from 'react-widgets-simple-number';
 import Portfolios from '../../objects/portfolios';
 import NumberPicker from 'react-widgets/lib/NumberPicker'
 import DonutChart from 'react-donut-chart';
-import RiskPage2 from './risk-page-2';
-simpleNumberLocalizer()
+simpleNumberLocalizer();
 
 class RiskPage1 extends React.Component{
     constructor(props){
@@ -19,6 +18,7 @@ class RiskPage1 extends React.Component{
         if(this.intervalId){clearTimeout(this.intervalId);}
         this.intervalId = setTimeout(
             () => this.setState({riskTolerance: value}), 500);
+        this.props.setRiskTolerance(value);
     }
     renderRecommendation(){
         const riskTolerance = this.state.riskTolerance;
@@ -27,17 +27,20 @@ class RiskPage1 extends React.Component{
         const data = Object.keys(portfolio).map(
             key => ({label: key, value: portfolio[key]})
         )
-        return <div className='portfolio-recommend'>
+        return (
+        <div className='portfolio-recommend'>
             <div>Thank you! At a risk tolerance level of {riskTolerance},
                 we recommend: </div>
               
                 <DonutChart className='donut-chart'
                     data={data} formatValues={el => el+"%"}/>
-                <button
-                onClick={()=>this.setState({
-                    pageNumber: 2
-                })}>Next</button>
+                    <button
+                        onClick={
+                            this.props.nextPage}>
+                            Next
+                    </button>
         </div>
+        )
     }
     addPercentSigns(){
         Array.from(document.getElementsByClassName("donutchart-legend-item-label")).forEach(
@@ -45,9 +48,6 @@ class RiskPage1 extends React.Component{
         el.innerHTML += "%");
     }
     render(){
-        if(this.state.pageNumber === 2){
-            return <RiskPage2 riskTolerance={this.state.riskTolerance}/>;
-        }
         setTimeout(this.addPercentSigns, 0);
         return <div className = 'page'>
             <div className='center-text'>
