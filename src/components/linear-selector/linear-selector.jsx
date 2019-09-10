@@ -20,10 +20,12 @@ class LinearSelector extends React.Component{
         }
     }
     render(){
-        const {numBuckets} = this.props;
+        const {numBuckets, leftText, rightText} = this.props;
         const middleBuckets = new Array(numBuckets-2).fill('1');
         return(
             <div>
+            <div className='widget-left-text'>{leftText}</div> 
+
             <div className='line-selector'>
             <svg height="20" width="20" className = 'polygon-pointer'
             style={{left: `${100*this.state.selectedNotchIdx}px`}}>
@@ -48,6 +50,9 @@ class LinearSelector extends React.Component{
                 {this.renderNotch(this.props.numBuckets-1)}
                 </span>
             </div>
+            
+            <div className='widget-right-text'>{rightText}</div>
+            
             </div>
         )
     }

@@ -22,6 +22,8 @@ class RiskPage2 extends React.Component{
         this.state =  obj;
         this.buttonClick = this.buttonClick.bind(this);
         window.getState = this.getState.bind(this);
+        this.leftText = "Exactly matches template portfolio"
+        this.rightText = "Fewer transfers"
     }
     getState(){
         return this.state;
@@ -45,14 +47,21 @@ class RiskPage2 extends React.Component{
     renderRecommendation(){
         let choice = this.state.transactionChoices[this.state.choiceIdx];
         return <div>
+            <ul className='transfer-container'>
             {choice.map((t,idx) =>
-                <div key={idx}>Transfer {'$'+t[2].toFixed(2)} from {t[0]} to {t[1]}</div>)
+                <li key={idx}>Transfer {'$'+t[2].toFixed(2)} from {t[0]} to {t[1]}</li>)
             }
+            </ul>
             {this.state.transactionChoices.length>1 ?
+            <div> <span style={{marginBottom: '12px',
+            display: 'inline-block'}}>Optionally, use fewer transfers:</span>
                 <LinearSelector numBuckets={this.state.transactionChoices.length}
                 dummyIdx={this.state.dummyIdx}
                 default={0}
-                selectionFunction={choiceIdx=>this.setState({choiceIdx})}/>
+                selectionFunction={choiceIdx=>this.setState({choiceIdx})}
+                leftText={this.leftText}
+                rightText={this.rightText}/>
+            </div>
                 : null}
         </div> 
     }
@@ -63,6 +72,7 @@ class RiskPage2 extends React.Component{
     render(){
         return (<div className = 'page'>
             <div className = 'page-content'>
+            <div className='centered-container' style={{maxWidth: '480px'}}>
             <span className='nowrap'>Please enter your actual current investment portfolio below.</span>
                         <table className='assets-container'>
                 <tbody>
@@ -82,8 +92,9 @@ class RiskPage2 extends React.Component{
                 )}
                 </tbody>
                    </table>
-                   <button onClick={()=>setTimeout(this.buttonClick,20)}>Finished</button>
-                  
+                   <button onClick={()=>setTimeout(this.buttonClick,80)}>Finished</button>
+            </div>
+                
                   {this.state.transactionChoices ? this.renderRecommendation() : null}
             </div>
         </div>)
