@@ -66,3 +66,43 @@ font-size: 18px;}
 .nowrap{
   white-space: nowrap;
 }
+
+.bucket, .left-bucket, .right-bucket{
+  display: inline-block;  
+  border-bottom: 1px solid black;
+  position: relative;
+  height: 30px;
+}
+.left-bucket, .right-bucket{
+  width: 50px;
+}
+.left-bucket{text-align: left}
+.right-bucket{text-align: right}
+.bucket{
+  width: 100px;
+  text-align: center;
+}
+.vert{    border-right: 1px solid black;
+  height: 8px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+
+.short-vert{    border-right: 1px solid black;
+  height: 5px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+
+.polygon-pointer{
+  position: absolute;
+  bottom: 14px;
+}
+
+.line-selector{
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+}
