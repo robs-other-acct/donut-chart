@@ -31,26 +31,41 @@ class RiskPage1 extends React.Component{
         <div className='portfolio-recommend'>
             <div>Thank you! At a risk tolerance level of {riskTolerance},
                 we recommend: </div>
-              
+              <div className='donutchart-container'>
                 <DonutChart className='donut-chart'
-                    data={data} formatValues={el => el+"%"}/>
+                    data={data} formatValues={el => el+"%"}
+                    />
+            </div>
+
+                    <div>
+                    <span
+                    style={{marginRight: '15px'}}>Next, we'll suggest  
+            a series of asset transfers to achieve this recommended portfolio.</span>
                     <button
                         onClick={
                             this.props.nextPage}>
                             Next
                     </button>
+                    </div>
+
         </div>
         )
     }
     addPercentSigns(){
-        Array.from(document.getElementsByClassName("donutchart-legend-item-label")).forEach(
+        Array.from(document.getElementsByClassName("donut-chart-legend-item-label")).forEach(
             el => 
-        el.innerHTML += "%");
+       { if(!el.innerHTML.endsWith('%')) {el.innerHTML += "%"}});
     }
     render(){
         setTimeout(this.addPercentSigns, 0);
         return <div className = 'page'>
-            <div className='center-text'>
+            <div className='centered-container' style={{maxWidth: '640px'}}>
+            <div style={{marginBottom: '22px'}}>
+                Over the next two pages, we'll guide you to  
+                an investment portfolio that achieves a balance of 
+                stability and profitability, tailored to your 
+                financial situation and preferences.
+            </div>
             Please select a level of risk tolerance from 1 to 10.
 
             <NumberPicker min = {1} max ={10} className='number-picker'
@@ -60,8 +75,9 @@ class RiskPage1 extends React.Component{
                 {this.renderRecommendation()}
             </div>
             </div>
+            </div>
 
-        </div>
+       
     }
 }
 

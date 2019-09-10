@@ -35,24 +35,26 @@ font-size: 18px;}
 }
 
 .portfolio-recommend{
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .donut-chart{
   margin-top: 40px;
+  height: 300px;
+  font-size: 32px;
 }
 
 .assets-container{
   padding: 30px 0;
   text-align: right;
-  display: inline-block;
-}
+  margin: 0 auto;}
 .asset-label::first-letter{
   text-transform: uppercase;
 }
 .asset-label{
-  display: inline-block;
   padding-right: 10px;
+  text-align: right;  
+  width: 160px;
 }
 .asset-input-row{
   text-align: right;
@@ -114,7 +116,7 @@ font-size: 18px;}
 .transfer-container{
   height: 130px;
   text-align: left;
-    max-width: 520px;
+    max-width: 470px;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -132,4 +134,13 @@ font-size: 18px;}
 .widget-right-text{
   top: 15px;
   right: 35px;
+}
+
+button{
+  margin: 15px;
+}
+
+.donutchart-container{
+  position: relative;
+  right: 100px;
 }

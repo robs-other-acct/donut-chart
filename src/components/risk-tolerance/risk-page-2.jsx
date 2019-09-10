@@ -73,7 +73,10 @@ class RiskPage2 extends React.Component{
         return (<div className = 'page'>
             <div className = 'page-content'>
             <div className='centered-container' style={{maxWidth: '480px'}}>
-            <span className='nowrap'>Please enter your actual current investment portfolio below.</span>
+            <div style={{textAlign: 'left'}}>
+             Since we don't have your current investment portfolio on file yet, please 
+             consult your records and enter the amounts below.</div>
+            
                         <table className='assets-container'>
                 <tbody>
                 {categories.map(cat=>
@@ -92,7 +95,7 @@ class RiskPage2 extends React.Component{
                 )}
                 </tbody>
                    </table>
-                   <button onClick={()=>setTimeout(this.buttonClick,80)}>Finished</button>
+                   <button onClick={()=>setTimeout(this.buttonClick,80)}>Recommend asset transfers</button>
             </div>
                 
                   {this.state.transactionChoices ? this.renderRecommendation() : null}

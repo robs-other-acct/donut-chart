@@ -5,6 +5,10 @@ export const generateTransactionObjectFromRoundedData = function(state, idealSta
     let desiredChange;
     let exactCanceller;
     let exactCancellers;
+    Array.prototype.without = function(el){
+        let idx = this.indexOf(el);
+        return this.slice(0, idx).concat(this.slice(idx+1));
+    }
         for(let i=categories.length - 1; i>=0; i--){
             let cat = categories[i];      
             desiredChangeByCat[cat]=(idealState[cat] || 0)-(state[cat] || 0); 
@@ -20,7 +24,7 @@ export const generateTransactionObjectFromRoundedData = function(state, idealSta
             if(!desiredChange) continue;
             exactCancellers = desiredChangeByAmt[-desiredChange];
             if (exactCancellers && exactCancellers.length){
-                desiredChangeByAmt[desiredChange].pop();
+                desiredChangeByAmt[desiredChange]=desiredChangeByAmt[desiredChange].without(cat);
                 exactCanceller = exactCancellers.pop();
                 result.push(
                 desiredChange<0 ? [cat, exactCanceller, -desiredChange] : [exactCanceller, cat, desiredChange]
@@ -65,7 +69,9 @@ export const generateTransactionObjectFromRoundedData = function(state, idealSta
     
         for(let i=0; i<categories.length; i++){
             let cat = categories[i];
-            if(desiredChangeByCat[cat]) desiredChangeByAmt[desiredChangeByCat[cat]].pop();
+            if(desiredChangeByCat[cat]) {
+                desiredChangeByAmt[desiredChangeByCat[cat]]=
+                desiredChangeByAmt[desiredChangeByCat[cat]].without(cat);}
             while(desiredChangeByCat[categories[i]]){
                 cat = categories[i];
              desiredChange = desiredChangeByCat[cat];  
@@ -84,7 +90,7 @@ export const generateTransactionObjectFromRoundedData = function(state, idealSta
             transferAmt = desiredChange < 0 ? transferAmt : -transferAmt;
             result.push(transferAmt>0? [cat, antiCat, transferAmt] : [antiCat, cat, -transferAmt]);
             desiredChangeByCat[cat] += transferAmt;
-            desiredChangeByCat[antiCat] -=transferAmt;    
+            desiredChangeByCat[antiCat] -=transferAmt;  
             let newDesiredChangeForAntiCat = desiredChangeWithOppositeSign - transferAmt;
             let newSiblingCats = desiredChangeByAmt[newDesiredChangeForAntiCat];
             desiredChangeByAmt[newDesiredChangeForAntiCat] = newSiblingCats 
@@ -95,7 +101,8 @@ export const generateTransactionObjectFromRoundedData = function(state, idealSta
             if(newDesiredChangeForAntiCat) {
             let exactCancellersForAntiCat = desiredChangeByAmt[-newDesiredChangeForAntiCat];
             if (exactCancellersForAntiCat && exactCancellersForAntiCat.length){
-                desiredChangeByAmt[newDesiredChangeForAntiCat].pop();
+                desiredChangeByAmt[newDesiredChangeForAntiCat]=
+                desiredChangeByAmt[newDesiredChangeForAntiCat].without(antiCat);
                 exactCanceller = exactCancellersForAntiCat.pop();
                 result.push(
                 newDesiredChangeForAntiCat<0 ?
@@ -200,8 +207,8 @@ export const generateTransactionChoices = function(state, idealStateInPercentage
     categories = categories.slice();
     for (let i=1; i<numSteps; i++){
         for(let j=0; j<8; j++){
-        categories.sort(()=>Math.random()-.5);
-        roundingPercentage = .1 + i*stepSize;
+            categories.sort(()=>Math.random()-.5);
+            roundingPercentage = .1 + i*stepSize;
         let newTransactionObject = generateTransactionObject(state, idealStateInPercentage, categories, roundingPercentage);
         if (newTransactionObject.length < minNumberOfTransactions){
             minNumberOfTransactions = newTransactionObject.length;
@@ -215,18 +222,18 @@ export const generateTransactionChoices = function(state, idealStateInPercentage
 }
 
 
-// let categories = 'abcdefgh'.split('');
-// const obj1={a: 120, b: 100, c: 0, d: 259, e: 66, f: 38, g: 199, h: 0}
+// let categories = 'abcdef'.split('');
+// const obj1={d: 55, e: 60, f: 44}
 // let example;
 
 //     example = generateTransactionChoices(
-// obj1, {a:0, b: 10, c: 15, d: 8, e: 32, g: 7, h: 28}, categories)
-
-// categories =  'ebgafhcd'.split('');
+// obj1, {a:30, b: 30, c: 20, d: 20}, categories)
+// categories =  'fcbdae'.split('');
 // subexample=generateTransactionObject(
-//     obj1, {a:0, b: 10, c: 15, d: 8, e: 32, g: 7, h: 28}, categories, 2.97
+//     obj1, {a:30, b:30, c: 20, d: 20}, categories, 2.803
 // )
 // console.log(subexample);
+
 // console.log(example);
 // let total = 0;
 // Object.values(obj1).forEach(val => {total += val})
