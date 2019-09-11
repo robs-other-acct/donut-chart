@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/donut-chart/precache-manifest.52bacb5d49449cb6b2544bdaa9e52527.js"
+  "/donut-chart/precache-manifest.411702207498305325e428f09649dd86.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c493b597c1b104eeab20e2092f46cf92",
+    "revision": "371b9696c797b7b0b980e945373544bb",
     "url": "/donut-chart/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/donut-chart/static/css/2.b61d24cf.chunk.css"
   },
   {
-    "revision": "dc7b026d407d5ba38d32",
-    "url": "/donut-chart/static/css/main.e66a1cc6.chunk.css"
+    "revision": "71068d11e73268217b3c",
+    "url": "/donut-chart/static/css/main.8fd05fb0.chunk.css"
   },
   {
     "revision": "dfee81d124945ba5f376",
     "url": "/donut-chart/static/js/2.89d824ca.chunk.js"
   },
   {
-    "revision": "dc7b026d407d5ba38d32",
+    "revision": "71068d11e73268217b3c",
     "url": "/donut-chart/static/js/main.cb368bc6.chunk.js"
   },
   {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/donut-chart/static/css/main.e66a1cc6.chunk.css",
+    "main.css": "/donut-chart/static/css/main.8fd05fb0.chunk.css",
     "main.js": "/donut-chart/static/js/main.cb368bc6.chunk.js",
     "main.js.map": "/donut-chart/static/js/main.cb368bc6.chunk.js.map",
     "runtime~main.js": "/donut-chart/static/js/runtime~main.eb4f2cd9.js",
@@ -9,10 +9,10 @@
     "static/js/2.89d824ca.chunk.js": "/donut-chart/static/js/2.89d824ca.chunk.js",
     "static/js/2.89d824ca.chunk.js.map": "/donut-chart/static/js/2.89d824ca.chunk.js.map",
     "index.html": "/donut-chart/index.html",
-    "precache-manifest.52bacb5d49449cb6b2544bdaa9e52527.js": "/donut-chart/precache-manifest.52bacb5d49449cb6b2544bdaa9e52527.js",
+    "precache-manifest.411702207498305325e428f09649dd86.js": "/donut-chart/precache-manifest.411702207498305325e428f09649dd86.js",
     "service-worker.js": "/donut-chart/service-worker.js",
     "static/css/2.b61d24cf.chunk.css.map": "/donut-chart/static/css/2.b61d24cf.chunk.css.map",
-    "static/css/main.e66a1cc6.chunk.css.map": "/donut-chart/static/css/main.e66a1cc6.chunk.css.map",
+    "static/css/main.8fd05fb0.chunk.css.map": "/donut-chart/static/css/main.8fd05fb0.chunk.css.map",
     "static/media/react-widgets.css": "/donut-chart/static/media/rw-widgets.eceddf47.ttf"
   }
 }
