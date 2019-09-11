@@ -141,6 +141,8 @@ font-size: 18px;}
   right: 35px;
 }
 
+svg{max-width: 100%;}
+
 button{
   margin: 15px;
 }
