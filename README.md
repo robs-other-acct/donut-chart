@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The live demo is [here](https://robs-other-acct.github.io/donut-chart/).
 
-## Available Scripts
+![](take1.gif)
 
-In the project directory, you can run:
+## Comments: 
 
-### `npm start`
+### Display widgets
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The first widget is NumberPicker from [this](http://jquense.github.io/react-widgets/api/NumberPicker/) library. I think it looks nice, and it gives the user the option of typing or clicking (which makes sense here since 10 is a manageable number to 'spin' through, given the fast rate of spin). T
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The donut chart is edited from [this source](https://www.npmjs.com/package/react-donut-chart). The main edit I made was to place the legend vertically above the donut in mobile view.
 
-### `npm test`
+The 'monetary inputs' on page 2 were built from ordinary html inputs. The idea is to display the monetary form when the input is not active (i.e., in 'focus'), but simplify to just a number when the user is editing the value in the input.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The widget on page 2 of the app is built from scratch, and could still use some adjustments when it comes to mobile view, particularly when the user has more than two choices.
 
-### `npm run build`
+### The algorithm
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I spent a good chunk of time playing with the idea of reducing the number of transactions the user makes between their asset types (towards achieving a given investment portfolio). After entering his or her current portfolio, the user is presented with various options, each option being a set of transactions, such that the resulting margin of error is not more than a few percentage points for each asset type. In some cases this restriction (of small error) results in no extra options being given to the user, but this is rare if the user owns several asset types. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Time spent
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Widget displays: 6 hours
 
-### `npm run eject`
+Original algorithm: 1 hour
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Extended algorithm: 6 hours
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
