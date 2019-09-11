@@ -55,7 +55,7 @@ class RiskPage2 extends React.Component{
             }
             </ul>
             {this.state.transactionChoices.length>1 ?
-            <div> <span style={{marginBottom: '12px',
+            <div className='bottom-widget-section'> <span style={{marginBottom: '12px',
             display: 'inline-block'}}>Optionally, use fewer transfers:</span>
                 <LinearSelector numBuckets={this.state.transactionChoices.length}
                 dummyIdx={this.state.dummyIdx}
