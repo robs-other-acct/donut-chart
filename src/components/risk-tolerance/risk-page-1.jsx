@@ -4,7 +4,8 @@ import '../../App.css';
 import simpleNumberLocalizer from 'react-widgets-simple-number';
 import Portfolios from '../../objects/portfolios';
 import NumberPicker from 'react-widgets/lib/NumberPicker'
-import DonutChart from 'react-donut-chart';
+import DonutChart from '../../lib/src/DonutChart';
+import DonutChartMobile from '../../lib/src/DonutChartMobile';
 simpleNumberLocalizer();
 
 class RiskPage1 extends React.Component{
@@ -31,11 +32,17 @@ class RiskPage1 extends React.Component{
         <div className='portfolio-recommend'>
             <div>Thank you! At a risk tolerance level of {riskTolerance},
                 we recommend: </div>
-              <div className='donutchart-container'>
+              <div className='donutchart-container hidden-under-500'>
+                  
                 <DonutChart className='donut-chart'
                     data={data} formatValues={el => el+"%"}
+                    // width={650}
                     />
             </div>
+                <DonutChartMobile className='donutchart-with-legend-mobile'
+                
+                    data={data} formatValues={el => el+"%"}
+                    />
 
                     <div>
                     <span
@@ -55,6 +62,9 @@ class RiskPage1 extends React.Component{
         Array.from(document.getElementsByClassName("donut-chart-legend-item-label")).forEach(
             el => 
        { if(!el.innerHTML.endsWith('%')) {el.innerHTML += "%"}});
+    }
+    changeViewBox(){
+        document.getElementsByClassName('donut-chart')[0].viewBox='0 0 100 100'
     }
     render(){
         setTimeout(this.addPercentSigns, 0);

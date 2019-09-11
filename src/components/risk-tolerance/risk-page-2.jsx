@@ -29,7 +29,9 @@ class RiskPage2 extends React.Component{
         return this.state;
     }
     keyDownHandler(e){
-        const allowedChars = '0123456789'.split('').concat(['Backspace', 'Tab']);
+        console.log(e.key)
+        const allowedChars = '0123456789'.split('').concat(
+            ['Backspace', 'Tab', 'ArrowRight', 'ArrowLeft']);
         if (!allowedChars.includes(e.key)){e.preventDefault();}
     }
     inputHandler(e, cat){
@@ -69,6 +71,11 @@ class RiskPage2 extends React.Component{
         let val = e.target.value;
         e.target.value = val === '$0.00' ? '' : val.split('.')[0].slice(1);
     }
+    blurHandler(e, cat){
+        let val = e.target.value || '0';
+        this.setState({[cat]: '$' + val + '.00'});
+        e.target.value = '$' + val + '.00';
+    }
     render(){
         return (<div className = 'page'>
             <div className = 'page-content'>
@@ -84,8 +91,7 @@ class RiskPage2 extends React.Component{
                    <td className='asset-label'>{cat}:</td>
                    <td><input 
                    onFocus={e=>this.focusHandler(e)}
-                   onBlur={e=> {this.setState({[cat]: '$' + e.target.value + '.00'});
-                   e.target.value = '$' + e.target.value + '.00'}}
+                   onBlur={e=>this.blurHandler(e, cat)}
                    defaultValue = '$0.00'
                    className = "asset-input"
                    onKeyDown={this.keyDownHandler}

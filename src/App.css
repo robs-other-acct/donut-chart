@@ -40,8 +40,9 @@ font-size: 18px;}
 
 .donut-chart{
   margin-top: 40px;
-  height: 300px;
   font-size: 32px;
+  width: 98vw;
+  max-width: 600px;
 }
 
 .assets-container{
@@ -63,6 +64,7 @@ font-size: 18px;}
 .asset-input{
   padding: 1px 4px;
   font-size: 16px;
+  width: 145px;
 }
 
 .nowrap{
@@ -114,11 +116,12 @@ font-size: 18px;}
 }
 
 .transfer-container{
-  height: 130px;
+  min-height: 130px;
   text-align: left;
     max-width: 470px;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .widget-left-text, .widget-right-text{
@@ -140,7 +143,36 @@ button{
   margin: 15px;
 }
 
-.donutchart-container{
-  position: relative;
-  right: 100px;
+.donutchart-mobile >*{
+  font-size: 30px;
+}
+
+.hidden-over-500{
+  display: none;
+}
+
+.donutchart-with-legend-mobile-legend-item-label{
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  /* .donut-chart-legend{
+    display: none;
+  } */
+  body{
+    font-size: 14px;
+  }
+
+  .hidden-over-500{
+    display: block;
+  }
+
+  
+  .donut-chart{
+    margin-top: 10px;
+  }
+
+  .hidden-under-500{
+    display: none;
+  }
 }
