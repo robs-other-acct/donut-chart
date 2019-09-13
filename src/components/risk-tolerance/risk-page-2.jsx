@@ -50,8 +50,9 @@ class RiskPage2 extends React.Component{
         let choice = this.state.transactionChoices[this.state.choiceIdx];
         return <div>
             <ul className='transfer-container'>
-            {choice.map((t,idx) =>
-                <li key={idx}>Transfer {'$'+t[2].toFixed(2)} from {t[0]} to {t[1]}</li>)
+            {choice.map((t,idx) =>{
+               return <li key={idx}>Transfer {'$'+t[2].toFixed(2)} from {t[0]} to {t[1]}</li>
+            })
             }
             </ul>
             {this.state.transactionChoices.length>1 ?
@@ -73,6 +74,7 @@ class RiskPage2 extends React.Component{
     }
     blurHandler(e, cat){
         let val = e.target.value || '0';
+        val = parseInt(val);
         this.setState({[cat]: '$' + val + '.00'});
         e.target.value = '$' + val + '.00';
     }

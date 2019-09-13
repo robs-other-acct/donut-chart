@@ -183,4 +183,16 @@ button{
   .hidden-under-500{
     display: none;
   }
+
+  .page{
+    padding: 20px;
+  }
+
+  .asset-input{
+    border: 1px solid #828282;
+  }
+
+  .assets-container{
+    font-size: 16px;
+  }
 }
