@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/donut-chart/static/css/main.8fd05fb0.chunk.css",
-    "main.js": "/donut-chart/static/js/main.cb368bc6.chunk.js",
-    "main.js.map": "/donut-chart/static/js/main.cb368bc6.chunk.js.map",
+    "main.css": "/donut-chart/static/css/main.ce0c85a8.chunk.css",
+    "main.js": "/donut-chart/static/js/main.f5049337.chunk.js",
+    "main.js.map": "/donut-chart/static/js/main.f5049337.chunk.js.map",
     "runtime~main.js": "/donut-chart/static/js/runtime~main.eb4f2cd9.js",
     "runtime~main.js.map": "/donut-chart/static/js/runtime~main.eb4f2cd9.js.map",
     "static/css/2.b61d24cf.chunk.css": "/donut-chart/static/css/2.b61d24cf.chunk.css",
     "static/js/2.89d824ca.chunk.js": "/donut-chart/static/js/2.89d824ca.chunk.js",
     "static/js/2.89d824ca.chunk.js.map": "/donut-chart/static/js/2.89d824ca.chunk.js.map",
     "index.html": "/donut-chart/index.html",
-    "precache-manifest.411702207498305325e428f09649dd86.js": "/donut-chart/precache-manifest.411702207498305325e428f09649dd86.js",
+    "precache-manifest.f40fc068f3c48a060c24b4c0ccd667b2.js": "/donut-chart/precache-manifest.f40fc068f3c48a060c24b4c0ccd667b2.js",
     "service-worker.js": "/donut-chart/service-worker.js",
     "static/css/2.b61d24cf.chunk.css.map": "/donut-chart/static/css/2.b61d24cf.chunk.css.map",
-    "static/css/main.8fd05fb0.chunk.css.map": "/donut-chart/static/css/main.8fd05fb0.chunk.css.map",
+    "static/css/main.ce0c85a8.chunk.css.map": "/donut-chart/static/css/main.ce0c85a8.chunk.css.map",
     "static/media/react-widgets.css": "/donut-chart/static/media/rw-widgets.eceddf47.ttf"
   }
 }
