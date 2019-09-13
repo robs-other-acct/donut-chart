@@ -1,5 +1,10 @@
 The live demo is [here](https://robs-other-acct.github.io/donut-chart/).
 
+### Change log
+Since the original submission, I've fixed some issues on page 2 of the app regarding mobile view. Namely, I decreased padding and font-size so that the asset labels remain one-liners; and I'm not sure why but the inputs sometimes lacked top borders in mobile view, so I put in borders and that seems to work. 
+
+Also I changed the logic of the inputs, to prevent displaying something like $09.00
+
 ![](take1.gif)
 
 ## Comments: 
